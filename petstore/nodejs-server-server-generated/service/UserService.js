@@ -64,18 +64,38 @@ exports.deleteUser = function(username) {
 exports.getUserByName = function(username) {
   return new Promise(function(resolve, reject) {
     var examples = {};
-    examples['application/json'] = {
-  "firstName" : "firstName",
-  "lastName" : "lastName",
-  "password" : "password",
-  "userStatus" : 6,
-  "phone" : "phone",
-  "id" : 0,
-  "email" : "email",
-  "username" : "username"
-};
+    examples['xd'] = {
+      "firstName" : "Yongling",
+      "lastName" : "Huang",
+      "password" : "password",
+      "userStatus" : 6,
+      "phone" : "xxxxxx",
+      "id" : 0,
+      "email" : "yongling.huang@group6.io",
+      "username" : "xd"
+    };
+    examples['aa'] = {
+      "firstName" : "aa",
+      "lastName" : "aa",
+      "password" : "password",
+      "userStatus" : 6,
+      "phone" : "xxxxxx",
+      "id" : 0,
+      "email" : "yongling.huang@group6.io",
+      "username" : "aa"
+    };
     if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+      if(username=="xd")
+      {
+        resolve(examples[Object.keys(examples)[0]]);
+      }        
+      else if(username=="aa")
+      {
+        resolve(examples[Object.keys(examples)[1]]);
+      }
+      else{
+        resolve();
+      }
     } else {
       resolve();
     }
